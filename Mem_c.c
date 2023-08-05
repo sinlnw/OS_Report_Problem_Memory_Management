@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 
 int global_num1 =1112;
 int global_num2 =1450;
@@ -14,7 +14,7 @@ void call_stack(int num)
         return;
     }
     int numnum = num;
-    std::cout<<" stack"<<num+1<<" : "<<&numnum<<"\n";
+    printf("  stack%d : %p\n",num+1,&numnum);
     numnum++;
     call_stack(numnum);
 }
@@ -33,12 +33,12 @@ int main(void)
 
     for (int i = 2; i >= 0; i--)
     {
-        std::cout<<"malloc"<<i+1<<" : "<<int_pointer_array[i]<<"\n";
+        printf(" malloc%d : %p\n",i+1,int_pointer_array[i]);
         free(int_pointer_array[i]);
     }
 
-    std::cout<<"global"<<1<<" : "<<&global_num1<<"\n";
-    std::cout<<"global"<<2<<" : "<<&global_num2<<"\n";
-    std::cout<<"global"<<3<<" : "<<&global_num3<<"\n";
-        
+    printf(" global1 : %p\n",&global_num1);
+    printf(" global2 : %p\n",&global_num2);
+    printf(" global3 : %p\n",&global_num3);
+   
 }
