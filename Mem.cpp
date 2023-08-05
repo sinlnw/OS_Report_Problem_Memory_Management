@@ -36,9 +36,10 @@ int main(void)
         std::cout<<"malloc"<<i+1<<" : "<<int_pointer_array[i]<<"\n"; // dynamically allocated memory in heap
         free(int_pointer_array[i]);
     }
-
-    std::cout<<"global"<<1<<" : "<<&global_num1<<"\n";
-    std::cout<<"global"<<2<<" : "<<&global_num2<<"\n";
+    
     std::cout<<"global"<<3<<" : "<<&global_num3<<"\n";
+    std::cout<<"global"<<2<<" : "<<&global_num2<<"\n";
+    std::cout<<"global"<<1<<" : "<<&global_num1<<"\n";
+    
         
 }
